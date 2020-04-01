@@ -1,0 +1,28 @@
+.navbar{
+    background-color: transparent !important;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    z-index: 100;
+    position: absolute;
+}
+.login-link{
+    color: #000000;
+}
+.signup-button{
+    background-color: #cd0000;
+}
+.signup-button:hover{
+    background-color: #cd0000;
+}
+.home-header{
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    margin: 0 auto;
+    top: 50%;
+    left: 31%;
+}
+.home-sub-header{
+    top: 65%;
+    left: 38%;
+    position: absolute;
+}
