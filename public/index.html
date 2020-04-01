@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Covid Exchange</title>
+        <link rel="stylesheet" href="./css/materialize.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+    <div id="particles-js">
+      <nav class="navbar">
+        <div class="nav-wrapper">
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="login-link modal-trigger" href="#login-modal">Login</a></li>
+            <li><a class="waves-effect waves-light btn signup-button modal-trigger" href="#signup-modal">Signup</a></li>
+          </ul>
+        </div>
+      </nav>
+      <h1 class="home-header">Covid + Exchange</h1>
+      <h6 class="home-sub-header">Send or exchange resources to fight covid-19.</h6>
+      </div>
+      <!-- Modal Structure -->
+  <div id="login-modal" class="modal">
+        <div class="modal-content">
+          <h4>Login</h4>
+          <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                        <div class="input-field col s12">
+                          <input id="email" type="email" class="validate">
+                          <label for="email">Email</label>
+                        </div>
+                      </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="password" type="password" class="validate">
+                      <label for="password">Password</label>
+                    </div>
+                  </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button class="btn waves-effect waves-light signup-button" type="submit" name="action">Login</button>
+                        </div>
+                    </div>
+                </form>
+              </div>
+        </div>
+      </div>
+
+      <!-- Modal Structure -->
+  <div id="signup-modal" class="modal">
+        <div class="modal-content">
+          <h4>Signup</h4>
+          <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input id="first_name" type="text" class="validate">
+                      <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input id="last_name" type="text" class="validate">
+                      <label for="last_name">Last Name</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                        <div class="input-field col s12">
+                          <input id="email" type="email" class="validate">
+                          <label for="email">Email</label>
+                        </div>
+                      </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="password" type="password" class="validate">
+                      <label for="password">Password</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                        <div class="input-field col s12">
+                          <input id="confrim-password" type="password" class="validate">
+                          <label for="confirm-password">Confirm Password</label>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label>
+                                <input id="indeterminate-checkbox" type="checkbox" />
+                                <span>By clicking here, you agree to the <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>.</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button class="btn waves-effect waves-light signup-button" type="submit" name="action">Signup</button>
+                        </div>
+                    </div>
+                </form>
+              </div>
+        </div>
+      </div>
+            
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script type="text/javascript" src="./js/materialize.min.js"></script>
+     <script type="text/javascript" src="./js/main.js"></script>
+     <script src="./js/particles.js"></script>
+     <script src="./js/particle-app.js"></script>
+    </body>
+</html>
