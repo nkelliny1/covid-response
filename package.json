@@ -1,0 +1,24 @@
+{
+  "name": "covid-response",
+  "version": "1.0.0",
+  "description": "An app built on Express using the MVC model that would allow users to barter emergency supplies.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkelliny1/covid-response.git"
+  },
+  "author": "Damian Ramos, Hugo Pierre-Lys, Nasr-Kyrillos Kelliny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nkelliny1/covid-response/issues"
+  },
+  "homepage": "https://github.com/nkelliny1/covid-response#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "sequelize": "^5.21.5"
+  }
+}
