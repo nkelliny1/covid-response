@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var Product = sequelize.define("Product", {
+    var Request = sequelize.define("Request", {
         title: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -30,12 +30,12 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    Product.associate = function (models) {
-        Product.belongsTo(models.User, {
+    Request.associate = function (models) {
+        Request.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             }
         });
     };
-    return Product;
+    return Request;
 };

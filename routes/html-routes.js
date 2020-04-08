@@ -7,11 +7,11 @@ module.exports = function (app) {
     });
     app.get("/dashboard", isAuthenticated, function(req, res) {
         res.sendFile(path.join(__dirname, "../public/dashboard.html"));
-      });
-      app.get("/inventory", isAuthenticated, function(req, res) {
+    });
+    app.get("/inventory", isAuthenticated, function(req, res) {
         res.sendFile(path.join(__dirname, "../public/inventory.html"));
-      });
-      app.get("/requests", isAuthenticated, function(req, res) {
+    });
+    app.get("/requests", isAuthenticated, function(req, res) {
         res.sendFile(path.join(__dirname, "../public/requests.html"));
-      });
+    });
 };

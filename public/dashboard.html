@@ -20,13 +20,17 @@
 
             <ul id="slide-out" class="sidenav">
               <li><div class="user-view">
-                <a href="#name"><span>John Doe</span></a><br>
+                <span>First Name:&nbsp;</span><span id="member-name"></span><br>
+                <span>Last Name:&nbsp;</span><span id="member-lname"></span><br>
+                <span>Facility Name:&nbsp;</span><span id="member-facName"></span><br>
+                <span>Facility Address:&nbsp;</span><span id="member-facAddress"></span><br>
+                <span>Facility Phone Number:&nbsp;</span><span id="member-facPhone"></span><br>
+                <span>Facility ID:&nbsp;</span><span id="member-facID"></span></a><br>
               </div></li>
               <li><div class="divider"></div></li>
-              <li><a href="#!">Dashboard</a></li>
-              <li><a href="#!">Request</a></li>
-              <li><a href="#!">Donate</a></li>
-              <li><a href="#!">Profile</a></li>
+              <li><a href="/dashboard">Dashboard</a></li>
+              <li><a href="/requests">Request</a></li>
+              <li><a href="/inventory">Donate</a></li>
               <li><a href="#!">Logout</a></li>
             </ul>
       </div>
@@ -39,7 +43,7 @@
             <p>See all inventory that has been submitted to the site that are in the medical device category.</p>
           </div>
           <div class="card-action">
-            <a href="#">Learn More</a>
+            <a href="/inventory">Learn More</a>
           </div>
         </div>
       </div>
@@ -50,7 +54,7 @@
               <p>See all inventory that has been submitted to the site that are in the medicine category.</p>
             </div>
             <div class="card-action">
-              <a href="#">Learn More</a>
+              <a href="/inventory">Learn More</a>
             </div>
           </div>
         </div>
@@ -61,7 +65,7 @@
                 <p>See all inventory that has been submitted to the site that are in the protective clothing category.</p>
               </div>
               <div class="card-action">
-                <a href="#">Learn More</a>
+                <a href="/inventory">Learn More</a>
               </div>
             </div>
           </div>
@@ -142,5 +146,6 @@
      <script type="text/javascript" src="./js/main.js"></script>
      <script src="./js/particles.js"></script>
      <script src="./js/particle-app.js"></script>
+     <script src="./js/member.js"></script>
     </body>
 </html>
