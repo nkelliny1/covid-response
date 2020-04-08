@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Covid Exchange</title>
+        <link rel="stylesheet" href="./css/materialize.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/bf34f2158d.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+    <div>
+            <nav style="background-color: #cd0000">
+                    <div class="nav-wrapper">
+                        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                      <ul id="nav-mobile" class="right hide-on-med-and-down">
+                      </ul>
+                    </div>
+                  </nav>
+
+            <ul id="slide-out" class="sidenav">
+              <li><div class="user-view">
+                <a href="#name"><span>John Doe</span></a><br>
+              </div></li>
+              <li><div class="divider"></div></li>
+              <li><a href="#!">Dashboard</a></li>
+              <li><a href="#!">Request</a></li>
+              <li><a href="#!">Donate</a></li>
+              <li><a href="#!">Profile</a></li>
+              <li><a href="#!">Logout</a></li>
+            </ul>
+      </div>
+      
+  <div class="row">
+      <div class="col s3 m3">
+        <div class="card red-card device-card darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Medical Devices</span>
+            <p>See all inventory that has been submitted to the site that are in the medical device category.</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s3 m3">
+          <div class="card red-card med-card darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Medicine</span>
+              <p>See all inventory that has been submitted to the site that are in the medicine category.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s3 m3">
+            <div class="card red-card wear-card darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">Protective Clothing</span>
+                <p>See all inventory that has been submitted to the site that are in the protective clothing category.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s3 m3">
+              <div class="card red-card map-card darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Covid-19 Tracker</span>
+                  <p>Click below to see the statistics of coronavirus around the world. Provided by Google Maps.</p>
+                </div>
+                <div class="card-action">
+                  <a href="https://www.google.com/covid19-map/" target="_blank">Learn More</a>
+                </div>
+              </div>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col s6">
+          <h3>Inventory</h3>
+            <table class="responsive-table striped">
+                <thead>
+                  <tr>
+                      <th>Item</th>
+                      <th>Quantity</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    <td>Ventilator</td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <td>N95 Masks</td>
+                    <td>150</td>
+                  </tr>
+                  <tr>
+                    <td>Gloves</td>
+                    <td>200</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="col s6">
+          <h3>Requests</h3>
+            <table class="responsive-table striped">
+                <thead>
+                  <tr>
+                      <th>Item</th>
+                      <th>Vendor</th>
+                      <th>Quantity</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    <td>Ventilator</td>
+                    <td>St. Barnabas Health</td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <td>N95 Masks</td>
+                    <td>Northwell Health</td>
+                    <td>150</td>
+                  </tr>
+                  <tr>
+                    <td>Gloves</td>
+                    <td>Bayonne Medical Center</td>
+                    <td>200</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+
+              
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script type="text/javascript" src="./js/materialize.min.js"></script>
+     <script type="text/javascript" src="./js/main.js"></script>
+     <script src="./js/particles.js"></script>
+     <script src="./js/particle-app.js"></script>
+    </body>
+</html>

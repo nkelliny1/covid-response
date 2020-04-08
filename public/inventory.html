@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Covid Exchange - Donate</title>
+        <link rel="stylesheet" href="./css/materialize.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/bf34f2158d.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+    <div>
+            <nav style="background-color: #cd0000">
+                    <div class="nav-wrapper">
+                        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                      <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <form>
+                            <li><input id="search" type="text" class="validate" style="background-color: white"></li>
+                            <li><button class="btn signup-button" type="submit" name="action" style="box-shadow: none;"><i class="fas fa-search" style="line-height: inherit"></i></button></li>
+                        </form>
+                      </ul>
+                    </div>
+                  </nav>
+
+            <ul id="slide-out" class="sidenav">
+              <li><div class="user-view">
+                <a href="#name"><span>John Doe</span></a><br>
+              </div></li>
+              <li><div class="divider"></div></li>
+              <li><a href="#!">Dashboard</a></li>
+              <li><a href="#!">Request</a></li>
+              <li><a href="#!">Donate</a></li>
+              <li><a href="#!">Profile</a></li>
+              <li><a href="#!">Logout</a></li>
+            </ul>
+      </div>
+      
+    <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s4">
+                <h3>Donation Inventory</h3>
+            </div>
+            <div class="col s1" style="margin-top: 40px;">
+                <a class="waves-effect waves-light req-button btn-small modal-trigger" href="#donate-modal">Donate</a>
+            </div>
+          </div>
+            <table class="responsive-table striped">
+                <thead>
+                  <tr>
+                      <th>Item</th>
+                      <th>Vendor</th>
+                      <th>Quantity</th>
+                      <th>Description</th>
+                      <th>Action</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    <td>Ventilator</td>
+                    <td>St. Barnabas Health</td>
+                    <td>100</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius magna ac nisl elementum, nec ultricies enim viverra. Proin nec faucibus dui. Proin massa purus, scelerisque ut imperdiet eget, sodales non leo. Curabitur lacinia dolor id mauris dignissim vestibulum. Sed sed diam sapien. </td>
+                    <td><a class="waves-effect waves-light req-button btn-small">Request</a></td>
+                  </tr>
+                  <tr>
+                    <td>N95 Masks</td>
+                    <td>Northwell Health</td>
+                    <td>150</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius magna ac nisl elementum, nec ultricies enim viverra. Proin nec faucibus dui. Proin massa purus, scelerisque ut imperdiet eget, sodales non leo. Curabitur lacinia dolor id mauris dignissim vestibulum. Sed sed diam sapien. </td>
+                    <td><a class="waves-effect waves-light req-button btn-small">Request</a></td>
+                  </tr>
+                  <tr>
+                    <td>Gloves</td>
+                    <td>Bayonne Medical Center</td>
+                    <td>200</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius magna ac nisl elementum, nec ultricies enim viverra. Proin nec faucibus dui. Proin massa purus, scelerisque ut imperdiet eget, sodales non leo. Curabitur lacinia dolor id mauris dignissim vestibulum. Sed sed diam sapien. </td>
+                    <td><a class="waves-effect waves-light req-button btn-small">Request</a></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+
+      <!-- Donate Modal -->
+  <div id="donate-modal" class="modal">
+      <div class="modal-content">
+        <h4>Donate</h4>
+        <div class="row">
+              <form class="col s12">
+                <div class="row">
+                      <div class="input-field col s12">
+                        <input id="title" type="text" class="validate">
+                        <label for="title">Item Name</label>
+                      </div>
+                    </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                      <select>
+                          <option value="" disabled selected>Choose your option</option>
+                          <option value="1">Medical Device</option>
+                          <option value="2">Medicine</option>
+                          <option value="3">Protective Clothing</option>
+                        </select>
+                        <label>Choose Category</label>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Item Description</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="input-field col s12">
+                          <input id="quantity" type="number" class="validate">
+                        <label for="quantity">Quantity</label>
+                      </div>
+                    </div>
+                  <div class="row">
+                      <div class="input-field col s12">
+                          <button class="btn waves-effect waves-light signup-button" type="submit" name="action">Donate</button>
+                      </div>
+                  </div>
+              </form>
+            </div>
+      </div>
+    </div>
+
+              
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script type="text/javascript" src="./js/materialize.min.js"></script>
+     <script type="text/javascript" src="./js/main.js"></script>
+     <script src="./js/particles.js"></script>
+     <script src="./js/particle-app.js"></script>
+    </body>
+</html>

@@ -18,11 +18,48 @@
     font-family: 'Montserrat', sans-serif;
     position: absolute;
     margin: 0 auto;
-    top: 50%;
+    top: 30%;
     left: 31%;
 }
 .home-sub-header{
-    top: 65%;
+    top: 45%;
     left: 38%;
     position: absolute;
+}
+nav a.sidenav-trigger {
+
+    display: block !important;
+
+}
+.red-card{
+    background-color: #cd0000 !important;
+    text-shadow: 1px 1px #000000;
+}
+
+.device-card{
+    background-image: url(../img/ventilator.jpg);
+  background-size: cover;
+  filter: grayscale(100%);
+}
+
+.map-card{
+    background-image: url(../img/map.jpg);
+  background-size: cover;
+  filter: grayscale(100%);
+}
+
+.wear-card{
+    background-image: url(../img/wear.jpg);
+  background-size: cover;
+  filter: grayscale(100%);
+}
+
+.med-card{
+    background-image: url(../img/medicine.jpg);
+  background-size: cover;
+  filter: grayscale(100%);
+}
+
+.req-button{
+    background-color: #cd0000 !important;
 }
