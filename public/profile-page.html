@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Covid Exchange - Donate</title>
+    <link rel="stylesheet" href="./css/materialize.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bf34f2158d.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div>
+        <nav style="background-color: #cd0000">
+            <div class="nav-wrapper">
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <form>
+                        <li><input id="search" type="text" class="validate" style="background-color: white"></li>
+                        <li><button class="btn signup-button" type="submit" name="action" style="box-shadow: none;"><i
+                                    class="fas fa-search" style="line-height: inherit"></i></button></li>
+                    </form>
+                </ul>
+            </div>
+        </nav>
+
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <span>First Name:&nbsp;</span><span id="member-name"></span><br>
+                    <span>Last Name:&nbsp;</span><span id="member-lname"></span><br>
+                    <span>Facility Name:&nbsp;</span><span id="member-facName"></span><br>
+                    <span>Facility Address:&nbsp;</span><span id="member-facAddress"></span><br>
+                    <span>Facility Phone Number:&nbsp;</span><span id="member-facPhone"></span><br>
+                    <span>Facility ID:&nbsp;</span><span id="member-facID"></span></a><br>
+                </div>
+            </li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/requests">Request</a></li>
+            <li><a href="/inventory">Donate</a></li>
+            <li><a href="#!">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <div class="col s4">
+                    <h3>Profile</h3>
+                    <img class="circle" src="cool_pic.jpg">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="first_name" type="text" class="validate">
+                            <label class="active" for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label class="active" for="last_name">Last Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="signup_facname" type="text" class="validate">
+                            <label class="active" for="signup_facname">Facility Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="signup_fac" type="text" class="validate">
+                            <label class="active" for="signup_fac">Facility Id</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="signup_phone" type="text" class="validate">
+                            <label class="active" for="signup_phone">Facility Phone Number</label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/materialize.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script src="./js/particles.js"></script>
+    <script src="./js/particle-app.js"></script>
+    <script src="./js/member.js"></script>
+</body>
+
+</html>
