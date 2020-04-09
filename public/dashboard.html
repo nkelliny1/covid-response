@@ -20,18 +20,19 @@
 
             <ul id="slide-out" class="sidenav">
               <li><div class="user-view">
-                <span>First Name:&nbsp;</span><span id="member-name"></span><br>
-                <span>Last Name:&nbsp;</span><span id="member-lname"></span><br>
-                <span>Facility Name:&nbsp;</span><span id="member-facName"></span><br>
-                <span>Facility Address:&nbsp;</span><span id="member-facAddress"></span><br>
-                <span>Facility Phone Number:&nbsp;</span><span id="member-facPhone"></span><br>
-                <span>Facility ID:&nbsp;</span><span id="member-facID"></span></a><br>
+                <span><strong>First Name:&nbsp;</strong></span><span id="member-name"></span><br>
+                <span><strong>Last Name:&nbsp;</strong></span><span id="member-lname"></span><br>
+                <span><strong>Facility Name:&nbsp;</strong></span><span id="member-facName"></span><br>
+                <span><strong>Facility Address:&nbsp;</strong></span><span id="member-facAddress"></span><br>
+                <span><strong>Facility Phone Number:&nbsp;</strong></span><span id="member-facPhone"></span><br>
+                <span><strong>Facility ID:&nbsp;</strong></span><span id="member-facID"></span></a><br>
+                <input type="text" id="member-id" style="display: none;" value=""></input>
               </div></li>
               <li><div class="divider"></div></li>
               <li><a href="/dashboard">Dashboard</a></li>
               <li><a href="/requests">Request</a></li>
               <li><a href="/inventory">Donate</a></li>
-              <li><a href="#!">Logout</a></li>
+              <li><a href="/logout">Logout</a></li>
             </ul>
       </div>
       
@@ -83,28 +84,20 @@
     </div>
     <div class="row">
         <div class="col s6">
-          <h3>Inventory</h3>
+          <h3>Donation Inventory</h3>
             <table class="responsive-table striped">
                 <thead>
                   <tr>
                       <th>Item</th>
+                      <th>Item Description</th>
+                      <th>Category</th>
                       <th>Quantity</th>
+                      <th>Available</th>
                   </tr>
                 </thead>
         
-                <tbody>
-                  <tr>
-                    <td>Ventilator</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>N95 Masks</td>
-                    <td>150</td>
-                  </tr>
-                  <tr>
-                    <td>Gloves</td>
-                    <td>200</td>
-                  </tr>
+                <tbody id="donate-table">
+                  
                 </tbody>
               </table>
         </div>
@@ -113,28 +106,15 @@
             <table class="responsive-table striped">
                 <thead>
                   <tr>
-                      <th>Item</th>
-                      <th>Vendor</th>
-                      <th>Quantity</th>
+                    <th>Item</th>
+                    <th>Item Description</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Approved</th>
                   </tr>
                 </thead>
         
-                <tbody>
-                  <tr>
-                    <td>Ventilator</td>
-                    <td>St. Barnabas Health</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>N95 Masks</td>
-                    <td>Northwell Health</td>
-                    <td>150</td>
-                  </tr>
-                  <tr>
-                    <td>Gloves</td>
-                    <td>Bayonne Medical Center</td>
-                    <td>200</td>
-                  </tr>
+                <tbody id="request-table">
                 </tbody>
               </table>
         </div>
@@ -144,8 +124,7 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script type="text/javascript" src="./js/materialize.min.js"></script>
      <script type="text/javascript" src="./js/main.js"></script>
-     <script src="./js/particles.js"></script>
-     <script src="./js/particle-app.js"></script>
      <script src="./js/member.js"></script>
+     <script src="./js/dashboard.js"></script>
     </body>
 </html>

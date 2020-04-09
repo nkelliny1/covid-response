@@ -24,18 +24,19 @@
 
             <ul id="slide-out" class="sidenav">
               <li><div class="user-view">
-                <span>First Name:&nbsp;</span><span id="member-name"></span><br>
-                <span>Last Name:&nbsp;</span><span id="member-lname"></span><br>
-                <span>Facility Name:&nbsp;</span><span id="member-facName"></span><br>
-                <span>Facility Address:&nbsp;</span><span id="member-facAddress"></span><br>
-                <span>Facility Phone Number:&nbsp;</span><span id="member-facPhone"></span><br>
-                <span>Facility ID:&nbsp;</span><span id="member-facID"></span></a><br>
+                <span><strong>First Name:&nbsp;</strong></span><span id="member-name"></span><br>
+                <span><strong>Last Name:&nbsp;</strong></span><span id="member-lname"></span><br>
+                <span><strong>Facility Name:&nbsp;</strong></span><span id="member-facName"></span><br>
+                <span><strong>Facility Address:&nbsp;</strong></span><span id="member-facAddress"></span><br>
+                <span><strong>Facility Phone Number:&nbsp;</strong></span><span id="member-facPhone"></span><br>
+                <span><strong>Facility ID:&nbsp;</strong></span><span id="member-facID"></span></a><br>
+                <input type="text" id="member-id" style="display: none;" value=""></input>
               </div></li>
               <li><div class="divider"></div></li>
               <li><a href="/dashboard">Dashboard</a></li>
               <li><a href="/requests">Request</a></li>
               <li><a href="/inventory">Donate</a></li>
-              <li><a href="#!">Logout</a></li>
+              <li><a href="/logout">Logout</a></li>
             </ul>
       </div>
       
@@ -53,35 +54,15 @@
                 <thead>
                   <tr>
                       <th>Item</th>
-                      <th>Vendor</th>
+                      <th>Item Description</th>
+                      <th>Category</th>
                       <th>Quantity</th>
-                      <th>Description</th>
+                      <th>Available</th>
                       <th>Action</th>
                   </tr>
                 </thead>
         
-                <tbody>
-                  <tr>
-                    <td>Ventilator</td>
-                    <td>St. Barnabas Health</td>
-                    <td>100</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius magna ac nisl elementum, nec ultricies enim viverra. Proin nec faucibus dui. Proin massa purus, scelerisque ut imperdiet eget, sodales non leo. Curabitur lacinia dolor id mauris dignissim vestibulum. Sed sed diam sapien. </td>
-                    <td><a class="waves-effect waves-light req-button btn-small">Request</a></td>
-                  </tr>
-                  <tr>
-                    <td>N95 Masks</td>
-                    <td>Northwell Health</td>
-                    <td>150</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius magna ac nisl elementum, nec ultricies enim viverra. Proin nec faucibus dui. Proin massa purus, scelerisque ut imperdiet eget, sodales non leo. Curabitur lacinia dolor id mauris dignissim vestibulum. Sed sed diam sapien. </td>
-                    <td><a class="waves-effect waves-light req-button btn-small">Request</a></td>
-                  </tr>
-                  <tr>
-                    <td>Gloves</td>
-                    <td>Bayonne Medical Center</td>
-                    <td>200</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius magna ac nisl elementum, nec ultricies enim viverra. Proin nec faucibus dui. Proin massa purus, scelerisque ut imperdiet eget, sodales non leo. Curabitur lacinia dolor id mauris dignissim vestibulum. Sed sed diam sapien. </td>
-                    <td><a class="waves-effect waves-light req-button btn-small">Request</a></td>
-                  </tr>
+                <tbody id="donate-table">
                 </tbody>
               </table>
         </div>
@@ -92,7 +73,7 @@
       <div class="modal-content">
         <h4>Donate</h4>
         <div class="row">
-              <form class="col s12">
+              <form class="col s12" id="donate-form">
                 <div class="row">
                       <div class="input-field col s12">
                         <input id="title" type="text" class="validate">
@@ -101,18 +82,18 @@
                     </div>
                 <div class="row">
                   <div class="input-field col s12">
-                      <select>
+                      <select id="category">
                           <option value="" disabled selected>Choose your option</option>
-                          <option value="1">Medical Device</option>
-                          <option value="2">Medicine</option>
-                          <option value="3">Protective Clothing</option>
+                          <option value="Medical Device">Medical Device</option>
+                          <option value="Medicine">Medicine</option>
+                          <option value="Protective Clothing">Protective Clothing</option>
                         </select>
                         <label>Choose Category</label>
                   </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <textarea id="description" class="materialize-textarea"></textarea>
                         <label for="textarea1">Item Description</label>
                     </div>
                   </div>
@@ -136,8 +117,7 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script type="text/javascript" src="./js/materialize.min.js"></script>
      <script type="text/javascript" src="./js/main.js"></script>
-     <script src="./js/particles.js"></script>
-     <script src="./js/particle-app.js"></script>
      <script src="./js/member.js"></script>
+     <script src="./js/donate.js"></script>
     </body>
 </html>

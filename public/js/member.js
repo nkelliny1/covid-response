@@ -6,6 +6,7 @@ $(document).ready(function() {
       $("#member-facAddress").text(data.facAddress);
       $("#member-facPhone").text(data.facPhone);
       $("#member-facID").text(data.facID);
+      $("#member-id").text(data.id);
       console.log(data);
     });
   });
