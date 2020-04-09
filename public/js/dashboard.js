@@ -1,6 +1,7 @@
 $(document).ready(function() {
-    var memberID = parseInt($("#member-id").text());
-    $.get("/api/user_products/" + memberID).then(function(data) {
+    var memberID = $("#member-id").text();
+    var prodURL = "/api/user_products/" + memberID;
+    $.get(prodURL).then(function(data) {
         for(var i = 0; i < data.length; i++){
             var approvedCheck = "";
             if(data[i].recID){

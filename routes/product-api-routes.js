@@ -60,6 +60,7 @@ module.exports = function (app) {
   });
 
   // Route for getting some data about our user to be used client side
+  var userID = "";
   app.get("/api/user_data", function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
@@ -77,6 +78,7 @@ module.exports = function (app) {
         facPhone: req.user.facPhone,
         facID: req.user.facID
       });
+      userID = req.user.id;
     }
   });
 
@@ -107,13 +109,13 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/user_requests/:recID", function(req, res) {
+  app.get("/api/user_requests/", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Author
     db.Request.findAll({
       where: {
-        recID: req.params.recID
+        recID: userID
       },
     }).then(function(dbRequest) {
       res.json(dbRequest);
@@ -133,13 +135,13 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/user_products/:vendorID", function(req, res) {
+  app.get("/api/user_products/", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Author
     db.Product.findAll({
       where: {
-        vendorID: req.params.vendorID
+        vendorID: userID
       },
     }).then(function(dbProduct) {
       res.json(dbProduct);
