@@ -12,7 +12,7 @@ $(document).ready(function() {
             }
             var donateTable = $("#donate-table");
             var tableRow = '<tr>' +
-                        '<td>' + data[i].title + '</td>' + 
+                        '<td><a class="modal-trigger donate-link" href="#receipt-modal" data-id="'+ data[i].id +'">' + data[i].title + '</a></td>' + 
                         '<td>' + data[i].description + '</td>'+
                         '<td>' + data[i].category + '</td>' +
                         '<td>' + data[i].quantity + '</td>' +
@@ -32,7 +32,7 @@ $(document).ready(function() {
             }
             var requestTable = $("#request-table");
             var tableRow = '<tr>' +
-                        '<td>' + data[i].title + '</td>' + 
+                        '<td><a class="modal-trigger req-link" href="#receipt-modal" data-id="'+ data[i].id +'">' + data[i].title + '</a></td>' + 
                         '<td>' + data[i].description + '</td>'+
                         '<td>' + data[i].category + '</td>' +
                         '<td>' + data[i].quantity + '</td>' +
@@ -41,4 +41,30 @@ $(document).ready(function() {
             requestTable.append(tableRow);
         }
     });
+
+    setTimeout(function(){
+        $(".donate-link").on("click", function(){
+            var donateID = $(this).attr("data-id");
+            console.log(donateID);
+            $.get("/api/products/").then(function(data) {
+                    var approvedCheck = "";
+                    if(data[donateID].vendorID){
+                        approvedCheck = "Yes";
+                    }
+                    else{
+                        approvedCheck = "No";
+                    }
+                    var receiptTable = $("#receipt-table");
+                    var tableRow = '<tr>' +
+                                '<td><a class="modal-trigger req-link" href="#receipt-modal" data-id="'+ data[i].id +'">' + data[donateID].title + '</a></td>' + 
+                                '<td>' + data[donateID].description + '</td>'+
+                                '<td>' + data[donateID].category + '</td>' +
+                                '<td>' + data[donateID].quantity + '</td>' +
+                                '<td>' + approvedCheck + '</td>' +
+                                '</tr>';
+                    receiptTable.append(tableRow);
+                
+            });
+        })
+    }, 1000)
 });
