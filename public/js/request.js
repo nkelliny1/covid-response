@@ -44,6 +44,41 @@ $(document).ready(function() {
           });
     }, 500);
 
+    setTimeout(function(){ 
+        var requestSearch = $("#request-search");
+        requestSearch.on("submit", function(event) {
+            event.preventDefault();
+            var query = $("#search").val().trim();
+            var url = "/api/requests/" + query;
+            console.log(url);
+            $("#request-table").empty();
+            $.get(url).then(function(data) {
+                for(var i = 0; i < data.length; i++){
+                    var approvedCheck = "";
+                    var disButton = "";
+                    if(data[i].vendorID){
+                        approvedCheck = "Yes";
+                        disButton = "disabled";
+                    }
+                    else{
+                        approvedCheck = "No";
+                        disButton = "";
+                    }
+                    var requestTable = $("#request-table");
+                    var tableRow = '<tr>' +
+                                '<td>' + data[i].title + '</td>' + 
+                                '<td>' + data[i].description + '</td>'+
+                                '<td>' + data[i].category + '</td>' +
+                                '<td>' + data[i].quantity + '</td>' +
+                                '<td>' + approvedCheck + '</td>' +
+                                '<td><a class="waves-effect waves-light req-button btn-small" value="' + data[i].id + '"' + disButton + '>Contribute</a></td>'
+                                '</tr>';
+                    requestTable.append(tableRow);
+                }
+            });
+        });
+    }, 500);
+
     var requestForm = $("#request-form");
     var titleInput = $("#title");
     var categoryInput = $("#category");

@@ -43,6 +43,41 @@ $(document).ready(function() {
               });
         }, 500);
 
+        setTimeout(function(){ 
+            var donateSearch = $("#donate-search");
+            donateSearch.on("submit", function(event) {
+                event.preventDefault();
+                var query = $("#search").val().trim();
+                var url = "/api/products/" + query;
+                console.log(url);
+                $("#donate-table").empty();
+                $.get(url).then(function(data) {
+                    for(var i = 0; i < data.length; i++){
+                        var approvedCheck = "";
+                        var disButton = "";
+                        if(data[i].recID){
+                            approvedCheck = "No";
+                            disButton = "disabled";
+                        }
+                        else{
+                            approvedCheck = "Yes";
+                            disButton = "";
+                        }
+                        var donateTable = $("#donate-table");
+                        var tableRow = '<tr>' +
+                                    '<td>' + data[i].title + '</td>' + 
+                                    '<td>' + data[i].description + '</td>'+
+                                    '<td>' + data[i].category + '</td>' +
+                                    '<td>' + data[i].quantity + '</td>' +
+                                    '<td>' + approvedCheck + '</td>' +
+                                    '<td><a class="waves-effect waves-light req-button btn-small" value="' + data[i].id + '"' + disButton + '>Contribute</a></td>'
+                                    '</tr>';
+                        donateTable.append(tableRow);
+                    }
+                });
+            });
+        }, 500);
+
     var donateForm = $("#donate-form");
     var titleInput = $("#title");
     var categoryInput = $("#category");
