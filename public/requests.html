@@ -1,62 +1,71 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <title>Covid Exchange - Request</title>
+        <link rel="stylesheet" href="./css/materialize.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/bf34f2158d.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+    <div>
+            <nav style="background-color: #cd0000">
+                    <div class="nav-wrapper">
+                        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                      <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <form id="request-search">
+                            <li><input id="search" type="text" class="validate" style="background-color: white"></li>
+                            <li><button class="btn signup-button" type="submit" name="action" style="box-shadow: none;"><i class="fas fa-search" style="line-height: inherit"></i></button></li>
+                        </form>
+                      </ul>
+                    </div>
+                  </nav>
 
-<head>
-  <title>Covid Exchange - Request</title>
-  <link rel="stylesheet" href="./css/materialize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-  <script src="https://kit.fontawesome.com/bf34f2158d.js" crossorigin="anonymous"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-
-<body>
-  <div>
-    <nav style="background-color: #cd0000">
-      <div class="nav-wrapper">
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <form>
-            <li><input id="search" type="text" class="validate" style="background-color: white"></li>
-            <li><button class="btn signup-button" type="submit" name="action" style="box-shadow: none;"><i
-                  class="fas fa-search" style="line-height: inherit"></i></button></li>
-          </form>
-        </ul>
+            <ul id="slide-out" class="sidenav">
+              <li><div class="user-view">
+                <span><strong>First Name:&nbsp;</strong></span><span id="member-name"></span><br>
+                <span><strong>Last Name:&nbsp;</strong></span><span id="member-lname"></span><br>
+                <span><strong>Facility Name:&nbsp;</strong></span><span id="member-facName"></span><br>
+                <span><strong>Facility Address:&nbsp;</strong></span><span id="member-facAddress"></span><br>
+                <span><strong>Facility Phone Number:&nbsp;</strong></span><span id="member-facPhone"></span><br>
+                <span><strong>Facility ID:&nbsp;</strong></span><span id="member-facID"></span></a><br>
+                <input type="text" id="member-id" style="display: none;" value=""></input>
+              </div></li>
+              <li><div class="divider"></div></li>
+              <li><a href="/dashboard">Dashboard</a></li>
+              <li><a href="/requests">Request</a></li>
+              <li><a href="/inventory">Donate</a></li>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
       </div>
-    </nav>
-
-    <ul id="slide-out" class="sidenav">
-      <li>
-        <div class="user-view">
-          <span>First Name:&nbsp;</span><span id="member-name"></span><br>
-          <span>Last Name:&nbsp;</span><span id="member-lname"></span><br>
-          <span>Facility Name:&nbsp;</span><span id="member-facName"></span><br>
-          <span>Facility Address:&nbsp;</span><span id="member-facAddress"></span><br>
-          <span>Facility Phone Number:&nbsp;</span><span id="member-facPhone"></span><br>
-          <span>Facility ID:&nbsp;</span><span id="member-facID"></span></a><br>
-        </div>
-      </li>
-      <li>
-        <div class="divider"></div>
-      </li>
-      <li><a href="/dashboard">Dashboard</a></li>
-      <li><a href="/requests">Request</a></li>
-      <li><a href="/inventory">Donate</a></li>
-      <li><a href="#!">Logout</a></li>
-    </ul>
-  </div>
-
-  <div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="col s2">
-          <h3>Requests</h3>
-        </div>
-        <div class="col s2" style="margin-top: 40px;">
-          <a class="waves-effect waves-light req-button btn-small modal-trigger" href="#request-modal">Make a
-            Request</a>
+      
+    <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s2">
+                <h3>Requests</h3>
+            </div>
+            <div class="col s2" style="margin-top: 40px;">
+                <a class="waves-effect waves-light req-button btn-small modal-trigger" href="#request-modal">Make a Request</a>
+            </div>
+          </div>
+            <table class="responsive-table striped">
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Item Description</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Fulfilled</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+        
+                <tbody id="request-table">
+                  
+                </tbody>
+              </table>
         </div>
       </div>
       <table class="responsive-table striped">
@@ -105,14 +114,45 @@
 
   <!-- Request Modal -->
   <div id="request-modal" class="modal">
-    <div class="modal-content">
-      <h4>Request</h4>
-      <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="title" type="text" class="validate">
-              <label for="title">Item Name</label>
+      <div class="modal-content">
+        <h4>Request</h4>
+        <div class="row">
+              <form class="col s12" id="request-form">
+                <div class="row">
+                      <div class="input-field col s12">
+                        <input id="title" type="text" class="validate">
+                        <label for="title">Item Name</label>
+                      </div>
+                    </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                      <select id="category">
+                          <option value="" disabled selected>Choose your option</option>
+                          <option value="Medical Device">Medical Device</option>
+                          <option value="Medicine">Medicine</option>
+                          <option value="Protective Clothing">Protective Clothing</option>
+                        </select>
+                        <label>Choose Category</label>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="description" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Item Description</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="input-field col s12">
+                          <input id="quantity" type="number" class="validate">
+                        <label for="quantity">Quantity</label>
+                      </div>
+                    </div>
+                  <div class="row">
+                      <div class="input-field col s12">
+                          <button class="btn waves-effect waves-light signup-button" type="submit" name="action">Request</button>
+                      </div>
+                  </div>
+              </form>
             </div>
           </div>
           <div class="row">
@@ -157,4 +197,11 @@
   <script src="./js/member.js"></script>
 </body>
 
+              
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script type="text/javascript" src="./js/materialize.min.js"></script>
+     <script type="text/javascript" src="./js/main.js"></script>
+     <script src="./js/member.js"></script>
+     <script src="./js/request.js"></script>
+    </body>
 </html>

@@ -25,6 +25,34 @@ module.exports = function (app) {
       });
   });
 
+  app.post("/api/donate", function(req, res) {
+    db.Product.create({
+      title: req.body.title,
+      description: req.body.description,
+      category: req.body.category,
+      quantity: req.body.quantity,
+      vendorID: req.body.vendorID,
+      recID: req.body.redID
+    })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
+  });
+
+  app.post("/api/make_request", function(req, res) {
+    db.Request.create({
+      title: req.body.title,
+      description: req.body.description,
+      category: req.body.category,
+      quantity: req.body.quantity,
+      recID: req.body.recID,
+      vendorID: req.body.vendorID,
+    })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
+  });
+
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
@@ -32,6 +60,7 @@ module.exports = function (app) {
   });
 
   // Route for getting some data about our user to be used client side
+  var userID = "";
   app.get("/api/user_data", function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
@@ -49,30 +78,75 @@ module.exports = function (app) {
         facPhone: req.user.facPhone,
         facID: req.user.facID
       });
+      userID = req.user.id;
     }
   });
-    app.get("api/products", function (req, res) {
-        var query = {};
-        if (req.query.user_id) {
-            query.UserID = req.query.user_id;
-        }
-        db.Product.findAll({
-            where: query
-        }).then(function (dbProduct) {
-            res.json(dbProduct);
-        });
-    });
 
-    app.get("api/posts/:id", function (req, res) {
-        db.Product.findOne({
-            where: {
-                id: req.params.id
-            }
-        }).then(function (dbProduct) {
-            console.log(dbProduct);
-            res.json(dbProduct);
-        });
+  app.get("/api/products", function(req, res) {
+    db.Product.findAll({
+    }).then(function(dbProduct) {
+      res.json(dbProduct);
     });
+  });
+
+  app.get("/api/requests", function(req, res) {
+    db.Request.findAll({
+    }).then(function(dbRequest) {
+      res.json(dbRequest);
+    });
+  });
+
+  app.get("/api/requests/:title", function(req, res) {
+    // Here we add an "include" property to our options in our findOne query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Author
+    db.Request.findAll({
+      where: {
+        title: req.params.title
+      },
+    }).then(function(dbRequest) {
+      res.json(dbRequest);
+    });
+  });
+
+  app.get("/api/user_requests/", function(req, res) {
+    // Here we add an "include" property to our options in our findOne query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Author
+    db.Request.findAll({
+      where: {
+        recID: userID
+      },
+    }).then(function(dbRequest) {
+      res.json(dbRequest);
+    });
+  });
+
+  app.get("/api/products/:title", function(req, res) {
+    // Here we add an "include" property to our options in our findOne query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Author
+    db.Product.findAll({
+      where: {
+        title: req.params.title
+      },
+    }).then(function(dbProduct) {
+      res.json(dbProduct);
+    });
+  });
+
+  app.get("/api/user_products/", function(req, res) {
+    // Here we add an "include" property to our options in our findOne query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Author
+    db.Product.findAll({
+      where: {
+        vendorID: userID
+      },
+    }).then(function(dbProduct) {
+      res.json(dbProduct);
+    });
+  });
 
     app.post("/api/products", function (req, res) {
         db.Product.create(req.body).then(function (dbProduct) {
@@ -91,6 +165,18 @@ module.exports = function (app) {
                 }
             }).then(function (dbProduct) {
                 res.json(dbProduct);
+            });
+    });
+
+    app.put("/api/requests", function (req, res) {
+        db.Request.update(
+            req.body,
+            {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function (dbRequest) {
+                res.json(dbRequest);
             });
     });
 
