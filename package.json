@@ -18,7 +18,7 @@
   "homepage": "https://github.com/nkelliny1/covid-response#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.16.1",
     "bcryptjs": "2.4.3",
     "mysql2": "^2.1.0",
